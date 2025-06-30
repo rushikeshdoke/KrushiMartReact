@@ -10,8 +10,8 @@ export default function Header() {
   const location = useLocation();
   const pathName = location.pathname;
 
-  //ganesh
-  //ganesh bodkhe
+
+  //ganesh bodkhe fdfd
   return (
     <header >
       <div className='HeaderMainBox'>

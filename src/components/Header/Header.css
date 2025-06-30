@@ -1,0 +1,45 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.KrushiLogoImg {
+    width: 50px;
+    height: 50px;
+}
+
+.HeaderMainBox {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* background-color: grey; */
+    padding-bottom: 10px;
+    box-shadow: rgba(33, 35, 38, 0.1) 0px 10px 10px -10px;
+}
+
+.headerSecondBOx {
+    padding-right: 25px;
+
+}
+
+.headerSecondBOx a {
+    padding-right: 20px;
+}
+
+.moving-text {
+    color: green;
+    display: inline-block;
+    animation: moveLeftToRight 3s linear infinite;
+    position: relative;
+}
+
+@keyframes moveLeftToRight {
+    0% {
+        transform: translateY(-20%);
+    }
+
+    100% {
+        transform: translateY(20%);
+    }
+}

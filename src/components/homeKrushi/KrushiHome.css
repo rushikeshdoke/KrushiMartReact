@@ -1,0 +1,9 @@
+.about-page {
+    padding: 20px 40px;
+}
+
+.about-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}

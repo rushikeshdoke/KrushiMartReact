@@ -1,0 +1,19 @@
+.logInMainDiv {
+    width: 60%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logInSecondDiv {
+    width: 30rem;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    padding: 50px;
+    border-radius: 4px;
+}
+
+.logInSecondDiv h2 {
+    text-align: center;
+    padding-bottom: 20px;
+    color: green;
+}

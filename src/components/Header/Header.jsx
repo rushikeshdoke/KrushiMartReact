@@ -10,6 +10,7 @@ export default function Header() {
   const location = useLocation();
   const pathName = location.pathname;
 
+  //ganesh
 
   return (
     <header >

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./KrushiCounter.css";
 //Rushi
+//Doke
 
 const stats = [
     { icon: "fab fa-quora", label: "Quora Followers", target: 12000 },

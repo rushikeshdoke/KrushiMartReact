@@ -20,6 +20,7 @@ export default function LogIn() {
     };
 
     const handleSubmit = async (e) => {
+        debugger;
         e.preventDefault();
         setError(null);
 
@@ -29,7 +30,7 @@ export default function LogIn() {
                 headers: {
                     'Content-Type': 'application/json'
                 },
-                credentials: 'include', // if you're using sessions/cookies
+                credentials: 'include',
                 body: JSON.stringify(formData)
             });
 
@@ -40,7 +41,14 @@ export default function LogIn() {
 
             const data = await response.json();
             console.log('Login successful:', data);
-            // Optionally redirect or store token/data in localStorage
+
+            // Store JWT token and role in localStorage
+            localStorage.setItem('token', data.token);
+            localStorage.setItem('role', data.role);
+
+            // Redirect to dashboard
+            window.location.href = data.redirectUrl;
+
         } catch (err) {
             console.error('Login error:', err.message);
             setError(err.message);

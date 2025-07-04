@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./SingUp.css"; // Use same CSS
 // import Logo from "../singup/Logo.jpeg";
 import FarmerImg from "../singup/Farmer.png";
@@ -7,10 +7,22 @@ import transport from '../singup/transport.jpg'
 import VideoLogo from "../CompanyLogoVideo/VideoLogo";
 import './SingUp'
 import { Link } from "react-router-dom";
+import SpinnerLoader from "../loader/SpinnerLoader";
+import useLoader from "../hooks/useLoader";
 const SingUp = () => {
+
+    const { loading, showLoader, hideLoader } = useLoader();
+
+    useEffect(() => {
+        showLoader();
+        setTimeout(() => {
+            hideLoader();
+        }, 500);
+    }, []);
     return (
 
         <div>
+            {loading && <SpinnerLoader />}
             <div className="MainContainerSingUp">
                 <div className="applogo" style={{ width: "40%" }}>
 

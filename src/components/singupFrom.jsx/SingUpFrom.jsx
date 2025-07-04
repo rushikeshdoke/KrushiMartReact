@@ -1,9 +1,19 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import InputField from '../inputFieldAll/InputField';
 import VideoLogo from '../CompanyLogoVideo/VideoLogo';
 import { registerUser } from '../../api/useService';
+import useLoader from '../hooks/useLoader';
+import SpinnerLoader from '../loader/SpinnerLoader';
 
 export default function SingUpFrom() {
+    const { loading, showLoader, hideLoader } = useLoader();
+    useEffect(() => {
+        showLoader();
+        setTimeout(() => {
+            hideLoader();
+        }, 500);
+    }, []);
+
     const [formData, setFormData] = useState({
         username: '',
         email: '',
@@ -139,6 +149,7 @@ export default function SingUpFrom() {
 
     return (
         <div style={{ display: 'flex', padding: '20px' }}>
+            {loading && <SpinnerLoader />}
             <div style={{ width: "50%" }}>
                 <VideoLogo />
             </div>

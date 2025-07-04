@@ -1,9 +1,19 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import VideoLogo from '../CompanyLogoVideo/VideoLogo';
 import InputField from '../inputFieldAll/InputField';
 import './LogIn.css';
+import useLoader from '../hooks/useLoader';
+import SpinnerLoader from '../loader/SpinnerLoader';
 
 export default function LogIn() {
+    const { loading, showLoader, hideLoader } = useLoader();
+
+    useEffect(() => {
+        showLoader();
+        setTimeout(() => {
+            hideLoader();
+        }, 500);
+    }, []);
     const [formData, setFormData] = useState({
         email: '',
         password: ''
@@ -57,6 +67,7 @@ export default function LogIn() {
 
     return (
         <div style={{ display: "flex" }}>
+            {loading && <SpinnerLoader />}
             <div style={{ width: "40%" }}>
                 <VideoLogo />
             </div>
